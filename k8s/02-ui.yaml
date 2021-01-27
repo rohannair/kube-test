@@ -37,3 +37,4 @@ spec:
   ports:
   - port: 80
     targetPort: ui-port
+    nodePort: 30000

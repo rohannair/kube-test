@@ -36,4 +36,6 @@ spec:
     app: api
   ports:
   - port: 80
+    protocol: TCP
     targetPort: api-port
+    nodePort: 30010
