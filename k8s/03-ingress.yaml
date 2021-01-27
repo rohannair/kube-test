@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: myingress
+  annotations:
+    kubernetes.io/ingress.class: kong
   labels:
       name: myingress
 spec:
@@ -9,16 +11,16 @@ spec:
   - http:
       paths:
       - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: ui
-            port:
-              number: 80
-      - pathType: Prefix
-        path: "/api"
+        path: /api
         backend:
           service:
             name: api
             port:
-              number: 80
+              number: 8080
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: ui
+            port:
+              number: 8080

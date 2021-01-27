@@ -35,7 +35,7 @@ spec:
   selector:
     app: api
   ports:
-  - port: 80
+  - port: 8080
     protocol: TCP
     targetPort: api-port
     nodePort: 30010

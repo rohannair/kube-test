@@ -13,5 +13,5 @@ COPY --from=builder /tmp/app/build .
 
 RUN yarn global add serve
 ENV PATH="$(yarn global bin):$PATH"
-
-CMD ["serve", "-s", ".", "-p 8080"]
+ENV PORT=8080
+CMD ["serve", "-s", "."]

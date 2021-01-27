@@ -12,4 +12,7 @@ else
   echo "No docker builds to make"
 fi
 
+helm repo add kong https://charts.konghq.com
+helm repo update
+helm install kong kong/kong --set ingressController.installCRDs=false
 kubectl apply -f k8s -R
